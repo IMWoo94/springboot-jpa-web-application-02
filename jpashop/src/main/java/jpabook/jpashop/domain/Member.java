@@ -2,6 +2,7 @@ package jpabook.jpashop.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,18 +19,18 @@ import lombok.Setter;
 @Setter
 public class Member {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "member_id")
-    private Long id;
+	@Id
+	@GeneratedValue
+	@Column(name = "member_id")
+	private Long id;
 
-    @NotEmpty
-    private String username;
+	@NotEmpty
+	private String username;
 
-    @Embedded
-    private Address address;
+	@Embedded
+	private Address address;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+	@OneToMany(mappedBy = "member")
+	private List<Order> orders = new ArrayList<>();
 
 }
