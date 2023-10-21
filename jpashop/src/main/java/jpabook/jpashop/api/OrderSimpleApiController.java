@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -60,6 +61,13 @@ public class OrderSimpleApiController {
 		return orderRepository.findAllByCriteria(new OrderSearch()).stream()
 			.map(SimpleOrderDto::new)
 			.collect(toList());
+	}
+
+	@GetMapping("/api/v3/simple-orders")
+	public List<SimpleOrderDto> ordersV3() {
+		List<Order> orders = orderRepository.findAllWithMemberDelivery();
+		List<SimpleOrderDto> collect = orders.stream().map(o -> new SimpleOrderDto(o)).collect(Collectors.toList());
+		return collect;
 	}
 
 	@Data
