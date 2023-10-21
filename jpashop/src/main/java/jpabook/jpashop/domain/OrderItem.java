@@ -16,6 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+// @BatchSize(size = 100)
 @Entity
 @Getter
 @Setter

@@ -9,3 +9,7 @@ Content-Type: application/json
 ### 3. 주문 조회 컬렉션 api and DTO 전달 fetch 조인
 GET http://localhost:8080/api/v3/orders
 Content-Type: application/json
+
+### 3.1 컬렉션 api fetch 조인 시 한계 돌파~~~
+GET http://localhost:8080/api/v3.1/orders?offset=0&limit=100
+Content-Type: application/json
