@@ -69,4 +69,8 @@ public class OrderService {
 	public List<Order> findOrdersByCriteria(OrderSearch orderSearch) {
 		return orderRepository.findAllByCriteria(orderSearch);
 	}
+
+	public List<Order> findALl(OrderSearch orderSearch) {
+		return orderRepository.findAll(orderSearch);
+	}
 }
