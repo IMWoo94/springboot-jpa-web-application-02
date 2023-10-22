@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.repository.MemberRepositoryOld;
 
 @SpringBootTest
 @Transactional
@@ -18,7 +18,7 @@ class MemberServiceTest {
 	@Autowired
 	MemberService memberService;
 	@Autowired
-	MemberRepository memberRepository;
+	MemberRepositoryOld memberRepository;
 
 	@Test
 	public void 회원가입() {

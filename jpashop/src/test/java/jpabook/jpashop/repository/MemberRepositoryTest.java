@@ -13,7 +13,7 @@ import jpabook.jpashop.domain.Member;
 @SpringBootTest
 class MemberRepositoryTest {
 	@Autowired
-	MemberRepository memberRepository;
+	MemberRepositoryOld memberRepository;
 
 	@Test
 	@Transactional

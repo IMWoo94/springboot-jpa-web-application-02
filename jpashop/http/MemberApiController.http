@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### 3. 수정
-PUT http://localhost:8080/api/v2/members/2
+PUT http://localhost:8080/api/v2/members/15
 Content-Type: application/json
 
 {

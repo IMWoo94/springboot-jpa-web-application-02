@@ -22,11 +22,11 @@ public class MemberService {
 	@Transactional
 	public Long join(Member member) {
 		validateDuplicateMember(member); // 중복 회원 검증
-		return memberRepository.save(member);
+		return memberRepository.save(member).getId();
 	}
 
 	private void validateDuplicateMember(Member member) {
-		List<Member> findMembers = memberRepository.findByName(member.getUsername());
+		List<Member> findMembers = memberRepository.findByUsername(member.getUsername());
 		if (!findMembers.isEmpty()) {
 			throw new IllegalStateException("이미 존재 하는 회원 입니다.");
 		}
@@ -40,12 +40,12 @@ public class MemberService {
 	}
 
 	public Member findOne(Long id) {
-		return memberRepository.find(id);
+		return memberRepository.findById(id).get();
 	}
 
 	@Transactional
 	public void update(Long id, String name) {
-		Member member = memberRepository.find(id);
+		Member member = memberRepository.findById(id).get();
 		member.setUsername(name);
 	}
 }
