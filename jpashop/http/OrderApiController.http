@@ -21,3 +21,7 @@ Content-Type: application/json
 ### 5. 컬렉션 api jpa DTO 컬렉션 최적화 컬렉션 한번에 in 절 조회 및 메모리상에서 관리
 GET http://localhost:8080/api/v5/orders
 Content-Type: application/json
+
+### 6. 컬렉션 api jpa DTO 컬렉션 최적화 하나의 쿼리로 처리
+GET http://localhost:8080/api/v6/orders
+Content-Type: application/json
